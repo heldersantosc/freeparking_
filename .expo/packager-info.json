@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19002,
-  "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 8036,
-  "expoServerNgrokUrl": "https://72-xbn.anonymous.freeparking.exp.direct",
-  "packagerNgrokUrl": "https://packager.72-xbn.anonymous.freeparking.exp.direct",
-  "ngrokPid": 7640
+  "packagerPid": 5056,
+  "expoServerNgrokUrl": "https://4f-7ke.anonymous.freeparking.exp.direct",
+  "packagerNgrokUrl": "https://packager.4f-7ke.anonymous.freeparking.exp.direct",
+  "ngrokPid": 4420,
+  "devToolsPort": 19002,
+  "expoServerPort": 19000
 }

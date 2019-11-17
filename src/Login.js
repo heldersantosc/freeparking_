@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Alert, Platform, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
-
+import { TextInput  } from 'react-native-gesture-handler';
+import { navigation } from 'react-navigation-stack';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
+
+export default class Login extends Component {
   
   clicou = () => {
     Alert.alert('Login Efetuado');
@@ -17,16 +18,22 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.welcomeImage} source={require('./src/assets/images/carro.png')}
+        
+        <Image style={styles.welcomeImage} source={require('../src/assets/images/carro.png')}
         />
         <Text style={styles.welcome}>Bem vindo ao Free Parking!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Text style={styles.instructions}>Encontre sua vaga </Text>
         <TextInput style={styles.ctexto} placeholder='Digite sua matrícula'></TextInput>
         <TextInput style={styles.ctexto} secureTextEntry={true} placeholder='Digite sua senha'></TextInput>
         <Text style={styles.instructions}>{instructions}</Text>
         <TouchableOpacity style={styles.botao}
                           onPress={ () => {this.clicou()}}>
             <Text>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.botao}
+
+                          onPress={ () => { navigation.navigate('Cadastrar')}}>
+            <Text>Cadastrar</Text>
         </TouchableOpacity>
       </View>
     );
