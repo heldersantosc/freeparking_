@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Alert, Platform, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { TextInput  } from 'react-native-gesture-handler';
+import { TextInput } from 'react-native-gesture-handler';
 import { navigation } from 'react-navigation-stack';
 
 const instructions = Platform.select({
@@ -10,15 +10,28 @@ const instructions = Platform.select({
 
 
 export default class Login extends Component {
-  
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        //construtor de senha e email vazios
+        //nome: '',
+        //senha: ''
+    };
+  }
+ 
+
   clicou = () => {
     Alert.alert('Login Efetuado');
   }
-  
+  cadastrar() {
+    this.props.navigation.navigate('Cadastrar');
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        
+
         <Image style={styles.welcomeImage} source={require('../src/assets/images/carro.png')}
         />
         <Text style={styles.welcome}>Bem vindo ao Free Parking!</Text>
@@ -27,13 +40,13 @@ export default class Login extends Component {
         <TextInput style={styles.ctexto} secureTextEntry={true} placeholder='Digite sua senha'></TextInput>
         <Text style={styles.instructions}>{instructions}</Text>
         <TouchableOpacity style={styles.botao}
-                          onPress={ () => {this.clicou()}}>
-            <Text>Login</Text>
+          onPress={() => { this.clicou() }}>
+          <Text>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.botao}
 
-                          onPress={ () => { navigation.navigate('Cadastrar')}}>
-            <Text>Cadastrar</Text>
+          onPress={() => { this.cadastrar() }}>
+          <Text>Cadastrar</Text>
         </TouchableOpacity>
       </View>
     );
@@ -59,7 +72,7 @@ const styles = StyleSheet.create({
   },
   imageIcon: {
     width: 150,
-    height:150
+    height: 150
   },
   welcomeImage: {
     width: 200,
@@ -68,22 +81,22 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: -10,
   },
-  ctexto:{
-    marginTop:10,
-    padding:15,
-    width:300,
-    backgroundColor:'#fff',
-    borderRadius:4,
+  ctexto: {
+    marginTop: 10,
+    padding: 15,
+    width: 300,
+    backgroundColor: '#fff',
+    borderRadius: 4,
     borderColor: '#F2F2F2',
-    alignItems:'center',
-    justifyContent:'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  botao:{
-    width:300,
-    backgroundColor:'#4CB1F7',
-    marginTop:10,
-    padding:15,
-    borderRadius:4,
+  botao: {
+    width: 300,
+    backgroundColor: '#4CB1F7',
+    marginTop: 10,
+    padding: 15,
+    borderRadius: 4,
     borderColor: '#F2F2F2'
   }
 });
